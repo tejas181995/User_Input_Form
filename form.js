@@ -2,6 +2,8 @@ const text = document.querySelector('#text');
 const text_error = document.querySelector('.text-error');
 const email = document.querySelector('#email');
 const email_error = document.querySelector('.email-error');
+const telephone = document.querySelector('#tel');
+const telephone_error = document.querySelector('.tel-error');
 
 text.addEventListener('input', function() {
     let nameRegex = RegExp("^[A-Z]{1}[a-z]{2,14}$");
@@ -18,6 +20,15 @@ email.addEventListener('input', function() {
     else
         email_error.textContent = "Invalid Email";
 });
+
+telephone.addEventListener('input', function() {
+    let telephoneRegex = RegExp("^[0-9]{2}[ ][6-9]{1}[0-9]{9}$");
+    if (telephoneRegex.test(telephone.value))
+        telephone_error.textContent = "";
+    else
+        telephone_error.textContent = "Invalid Email";
+});
+
 
 const salary = document.querySelector('#salary');
 const output = document.querySelector('.salary-output');
