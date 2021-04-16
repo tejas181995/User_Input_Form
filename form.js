@@ -32,7 +32,7 @@ telephone.addEventListener('input', function() {
 });
 
 pwd.addEventListener('input', function() {
-    let pwdRegex = RegExp("^[A-za-z0-9]{8,}$");
+    let pwdRegex = RegExp("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=[^$@!#%*?&]*[$#@!%*?&][^$@!#%*?&]*$).{8,}");
     if (pwdRegex.test(pwd.value))
         pwd_error.textContent = "";
     else
